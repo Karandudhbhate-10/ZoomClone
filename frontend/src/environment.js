@@ -1,8 +1,6 @@
 let IS_PROD = true;
-const server = IS_PROD ?
-    "https://apnacollegebackend.onrender.com" :
-
-    "http://localhost:8000"
-
+const server = IS_PROD
+  ? "https://zoomclone-1-713e.onrender.com"
+  : "http://localhost:8000";
 
 export default server;
