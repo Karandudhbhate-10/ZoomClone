@@ -11,6 +11,8 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import * as React from "react";
 import { AuthContext } from "../contexts/AuthContext";
 
+// TODO remove, this demo shouldn't need to reset the theme.
+
 const defaultTheme = createTheme();
 
 export default function Authentication() {
@@ -58,9 +60,12 @@ export default function Authentication() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1612831455359-970e23a1e4e9?q=80&w=1625&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
+            backgroundImage: "url(https://picsum.photos/1600/900)",
             backgroundRepeat: "no-repeat",
+            backgroundColor: (t) =>
+              t.palette.mode === "light"
+                ? t.palette.grey[50]
+                : t.palette.grey[900],
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
